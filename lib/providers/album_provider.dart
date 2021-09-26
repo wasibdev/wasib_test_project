@@ -31,7 +31,6 @@ class AlbumProvider with ChangeNotifier {
       if (response.statusCode == 200) {
         final item = json.decode(response.body);
         res = Album.fromJson(item);
-        logging.log(response.body);
       } else {
         logging.log(response.body);
         showToast('album not found');

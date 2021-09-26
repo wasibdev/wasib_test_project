@@ -33,7 +33,7 @@ class _PostPageState extends State<PostPage> {
     post = Provider.of<PostProvider>(context);
     commentList = Provider.of<CommentProvider>(context);
     return Scaffold(
-      backgroundColor: bgColor,
+      backgroundColor: bg1Color,
       body: SafeArea(
         child: Column(
           children: [

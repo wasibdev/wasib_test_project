@@ -19,6 +19,11 @@ class PhotosProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  updatePhotos(photo){
+    photosList.insert(0, photo);
+    notifyListeners();
+  }
+
   Future<List<Photos>> fetchPhotos(context,albumId) async {
     var url = Uri.parse(restUrl+photos+"?"+albumIdFilter+albumId);
     List<Photos> res = [];
@@ -31,7 +36,6 @@ class PhotosProvider with ChangeNotifier {
       if (response.statusCode == 200) {
         Iterable list = json.decode(response.body);
         res = list.map((model) => Photos.fromJson(model)).toList();
-        logging.log(response.body);
       } else {
         logging.log(response.body);
         showToast('photos not found');

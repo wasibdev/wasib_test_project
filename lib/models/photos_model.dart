@@ -4,6 +4,7 @@ class Photos {
   final String title;
   final String url;
   final String thumbnailUrl;
+  final bool networkImage;
 
   Photos({
     required this.id,
@@ -11,6 +12,7 @@ class Photos {
     required this.title,
     required this.url,
     required this.thumbnailUrl,
+    required this.networkImage,
   });
 
   factory Photos.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class Photos {
       title: json['title'] ?? "",
       url: json['url'] ?? "",
       thumbnailUrl: json['thumbnailUrl'] ?? "",
+      networkImage: true,
     );
   }
 }

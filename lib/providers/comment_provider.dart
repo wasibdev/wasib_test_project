@@ -31,7 +31,6 @@ class CommentProvider with ChangeNotifier {
       if (response.statusCode == 200) {
         Iterable list = json.decode(response.body);
         res = list.map((model) => Comment.fromJson(model)).toList();
-        logging.log(response.body);
       } else {
         logging.log(response.body);
         showToast('comment not found');

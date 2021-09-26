@@ -18,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: primaryColor,
+      backgroundColor: bg2Color,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 welcome,
                 style: GoogleFonts.nunitoSans(
                   height: 1,
-                  color: Colors.white,
+                  color: text1Color,
                   fontSize: 32,
                   fontWeight: FontWeight.w900,
                 ),
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text(
                   info,
                   style: GoogleFonts.nunitoSans(
-                    color: Colors.white70,
+                    color: text1Color,
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
               textAlign: TextAlign.center,
               style: GoogleFonts.nunitoSans(
                 height: 1,
-                color: primaryColor,
+                color: text1Color,
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),

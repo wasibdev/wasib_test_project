@@ -31,7 +31,6 @@ class PostProvider with ChangeNotifier {
       if (response.statusCode == 200) {
         final item = json.decode(response.body);
         res = Post.fromJson(item);
-        logging.log(response.body);
       } else {
         logging.log(response.body);
         showToast('post not found');
