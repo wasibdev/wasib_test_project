@@ -1,8 +1,10 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:test_project/providers/album_provider.dart';
 import 'package:test_project/providers/photos_provider.dart';
@@ -16,6 +18,8 @@ class AlbumPage extends StatefulWidget {
 
 class _AlbumPageState extends State<AlbumPage> {
 
+  bool imageReady = false;
+  late XFile? imageFile;
   late AlbumProvider album;
   late PhotosProvider photosList;
   @override
@@ -53,7 +57,7 @@ class _AlbumPageState extends State<AlbumPage> {
                   icon: const Icon(Icons.add_circle),
                   color: primaryColor,
                   iconSize: 40,
-                  onPressed: () {},
+                  onPressed: () {getImageFromGallery();},
                 ),
                 const SizedBox(width: 16),
               ],
@@ -67,6 +71,8 @@ class _AlbumPageState extends State<AlbumPage> {
                 fontWeight: FontWeight.w900,
               ),
             ),
+            !imageReady?Container():
+            Image.file(File(imageFile!.path)),
             photosList.loading?Container():
             Expanded(
               child: ListView.builder(
@@ -80,5 +86,14 @@ class _AlbumPageState extends State<AlbumPage> {
         ),
       ),
     );
+  }
+
+  Future<void> getImageFromGallery() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      imageFile = image;
+      imageReady = true;
+    });
   }
 }
