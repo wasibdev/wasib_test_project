@@ -19,6 +19,11 @@ class CommentProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  updateComment(comment){
+    commentList.insert(0, comment);
+    notifyListeners();
+  }
+
   Future<List<Comment>> fetchComment(context,postId) async {
     var url = Uri.parse(restUrl+comments+"?"+postIdFilter+postId);
     List<Comment> res = [];

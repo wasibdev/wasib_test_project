@@ -38,7 +38,7 @@ class _AlbumPageState extends State<AlbumPage> {
     album = Provider.of<AlbumProvider>(context);
     photosList = Provider.of<PhotosProvider>(context);
     return Scaffold(
-      backgroundColor: bg1Color,
+      backgroundColor: bg2Color,
       body: SafeArea(
         child: Column(
           children: [
@@ -51,7 +51,7 @@ class _AlbumPageState extends State<AlbumPage> {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.arrow_back),
-                    color: whiteColor,
+                    color: text1Color,
                     iconSize: 30,
                     onPressed: () {
                       Navigator.pop(context);
@@ -63,7 +63,7 @@ class _AlbumPageState extends State<AlbumPage> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.nunitoSans(
                       height: 1,
-                      color: whiteColor,
+                      color: text1Color,
                       fontSize: 24,
                       fontWeight: FontWeight.w900,
                     ),
@@ -71,7 +71,7 @@ class _AlbumPageState extends State<AlbumPage> {
                   const Spacer(),
                   IconButton(
                     icon: const Icon(Icons.add_circle),
-                    color: whiteColor,
+                    color: text1Color,
                     iconSize: 30,
                     onPressed: () {
                       getImageFromGallery(id);
@@ -80,7 +80,7 @@ class _AlbumPageState extends State<AlbumPage> {
                 ],
               ),
               decoration: const BoxDecoration(
-                color: boxColor,
+                color: whiteColor,
                 borderRadius: BorderRadius.all(Radius.circular(25)),
               ),
             ),
@@ -92,7 +92,7 @@ class _AlbumPageState extends State<AlbumPage> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.nunitoSans(
                         height: 1,
-                        color: whiteColor,
+                        color: text1Color,
                         fontSize: 28,
                         fontWeight: FontWeight.w900,
                       ),
@@ -119,7 +119,7 @@ class _AlbumPageState extends State<AlbumPage> {
                           return Container(
                             padding: const EdgeInsets.all(8),
                             decoration: const BoxDecoration(
-                              color: boxColor,
+                              color: whiteColor,
                               borderRadius: BorderRadius.all(Radius.circular(15)),
                             ),
                             child: Column(
@@ -146,7 +146,7 @@ class _AlbumPageState extends State<AlbumPage> {
                                         ),
                                         borderRadius: const BorderRadius.all( Radius.circular(50.0)),
                                         border: Border.all(
-                                          color: whiteColor,
+                                          color: text1Color,
                                           width: 2.0,
                                         ),
                                       ),
@@ -157,7 +157,7 @@ class _AlbumPageState extends State<AlbumPage> {
                                       textAlign: TextAlign.start,
                                       style: GoogleFonts.nunitoSans(
                                         height: 1,
-                                        color: whiteColor,
+                                        color: text1Color,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w900,
                                       ),
