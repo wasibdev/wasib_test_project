@@ -1,16 +1,24 @@
-class Post {
+class Comment {
   final int id;
-  final int userId;
-  final String title;
+  final int postId;
+  final String name;
+  final String email;
   final String body;
 
-  Post({required this.id, required this.userId, required this.title, required this.body});
+  Comment({
+    required this.id,
+    required this.postId,
+    required this.name,
+    required this.email,
+    required this.body,
+  });
 
-  factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
+  factory Comment.fromJson(Map<String, dynamic> json) {
+    return Comment(
       id: json['id'] ?? 0,
-      userId: json['userId'] ?? 0,
-      title: json['title'] ?? "",
+      postId: json['postId'] ?? 0,
+      name: json['name'] ?? "",
+      email: json['email'] ?? "",
       body: json['body'] ?? "",
     );
   }

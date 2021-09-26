@@ -6,4 +6,5 @@ const posts = '/posts';
 const comments = '/comments';
 
 const albumIdFilter = 'albumId=';
+const postIdFilter = 'postId=';
 

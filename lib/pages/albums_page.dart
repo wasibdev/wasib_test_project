@@ -59,7 +59,7 @@ class _AlbumPageState extends State<AlbumPage> {
               ],
             ),
             Text(
-              !album.loading?album.post.title:"Loading",
+              !album.loading?album.album.title:"Loading",
               style: GoogleFonts.nunitoSans(
                 height: 1,
                 color: Colors.black,

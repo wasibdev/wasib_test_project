@@ -4,7 +4,9 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:test_project/pages/home_page.dart';
 import 'package:test_project/providers/album_provider.dart';
+import 'package:test_project/providers/comment_provider.dart';
 import 'package:test_project/providers/photos_provider.dart';
+import 'package:test_project/providers/post_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +24,8 @@ void main() {
 List<SingleChildWidget> providers = [
   ChangeNotifierProvider<AlbumProvider>(create: (_) => AlbumProvider()),
   ChangeNotifierProvider<PhotosProvider>(create: (_) => PhotosProvider()),
+  ChangeNotifierProvider<PostProvider>(create: (_) => PostProvider()),
+  ChangeNotifierProvider<CommentProvider>(create: (_) => CommentProvider()),
 ];
 
 class MyApp extends StatelessWidget {

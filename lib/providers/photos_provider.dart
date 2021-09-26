@@ -34,7 +34,7 @@ class PhotosProvider with ChangeNotifier {
         logging.log(response.body);
       } else {
         logging.log(response.body);
-        showToast('album not found');
+        showToast('photos not found');
       }
     } catch (e) {
       logging.log(e.toString());
